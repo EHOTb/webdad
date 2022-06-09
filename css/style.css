@@ -10,6 +10,18 @@ body {
     padding: 0 2rem;
 }
 
+@media(max-width:1024px) {
+    .container {
+        padding: 0;
+    }
+}
+
+@media(max-width:320px) {
+    .container {
+        padding: 0;
+    }
+}
+
 .wrapper__global {
     min-height: 100%;
     overflow: hidden;
@@ -55,6 +67,7 @@ a:hover {
 @media (max-width:320px) {
     .header-main__page {
         height: 4.375rem;
+        padding-right: 2rem;
     }
 }
 
@@ -244,8 +257,15 @@ a:hover {
     padding-top: 0;
 }
 
-@media (max-width:320px) {
-    .main__sense {}
+@media (max-width:1024px) {
+    .main__sense dl {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main__sense dd {
+        width: 100%;
+    }
 }
 
 .main__sense h1 {
@@ -296,7 +316,7 @@ a:hover {
         line-height: 2.3rem;
         text-align: center;
         display: block;
-        width: 25rem;
+        max-width: 25rem;
     }
 }
 
@@ -344,6 +364,7 @@ a:hover {
     .main__text {
         display: flex;
         flex-direction: column;
+        max-width: 100%;
     }
 }
 
@@ -378,13 +399,20 @@ a:hover {
 
 .main__promo {
     display: flex;
-    max-width: 34rem;
 }
 
 @media (max-width:1024px) {
     .main__promo {
-        flex: 0 1 33%;
         max-width: 100%;
+        flex: 0 0 15%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main__promo dd {
+        max-width: 9.6rem
+    }
+    .main__promo dd {
+        margin-bottom: 0.9rem;
     }
 }
 
@@ -427,3 +455,122 @@ a:hover {
         display: none;
     }
 }
+
+
+/*========================================================2block==========================*/
+
+.howItsWork {
+    display: flex;
+    justify-content: center;
+}
+
+.container__howItsWork {
+    max-width: 75rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__howItsWork {
+    font-weight: 600;
+    font-size: 1.9rem;
+    padding-top: 6rem;
+    padding-bottom: 3.8rem;
+}
+
+.howItsWork__items {
+    display: flex;
+    justify-content: space-around;
+    /* gap: 5rem; */
+    flex: 0 1 50%;
+    flex-wrap: wrap;
+}
+
+.howItsWork__item:nth-child(even) {
+    padding-left: 8.3rem;
+}
+
+.howItsWork__item:nth-child(1),
+.howItsWork__item:nth-child(2) {
+    padding-bottom: 4.3rem;
+}
+
+.howItsWork__item-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.howItsWork__item {
+    display: flex;
+    max-width: 31rem;
+}
+
+.howItsWork__item-number {
+    font-size: 3.1rem;
+    font-weight: 500;
+    padding-right: 2rem;
+    padding-top: 0.1rem;
+    position: relative;
+}
+
+.howItsWork__item-number1::before {
+    position: absolute;
+    left: 3px;
+    content: "01";
+    color: #FED100;
+    z-index: -1;
+}
+
+.howItsWork__item-number2:before {
+    position: absolute;
+    left: 3px;
+    content: "02";
+    color: #FED100;
+    z-index: -1;
+}
+
+.howItsWork__item-number3:before {
+    position: absolute;
+    left: 3px;
+    content: "03";
+    color: #FED100;
+    z-index: -1;
+}
+
+.howItsWork__item-number4:before {
+    position: absolute;
+    left: 3px;
+    content: "04";
+    color: #FED100;
+    z-index: -1;
+}
+
+.howItsWork__item-title {
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+}
+
+.howItsWork__item-text {}
+
+.prices {}
+
+.container__prices {}
+
+.prices__header {}
+
+.prices__title {}
+
+.prices__subtitle {}
+
+.prices__items {}
+
+.prices__item {}
+
+.prices__item-header {}
+
+.prices__item-content {}
+
+.prices__item-price {}
+
+.prices__item-button {}
