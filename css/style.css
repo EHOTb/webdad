@@ -5,12 +5,19 @@ body {
     box-sizing: border-box;
 }
 
+:root {
+    --main: #333;
+    --yellow: #FED100;
+    --red: #FF352B;
+    --white: #fff;
+}
+
 .container {
     /* max-width: 192rem; */
     padding: 0 2rem;
 }
 
-@media(max-width:1024px) {
+@media(max-width:768px) {
     .container {
         padding: 0;
     }
@@ -32,7 +39,7 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .container {
         max-width: 100%;
         margin: 0 auto;
@@ -85,7 +92,7 @@ a:hover {
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .header-main__logo {
         font-size: 2.2rem;
         padding-left: 0.87rem;
@@ -103,7 +110,7 @@ a:hover {
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .header-main__nav {
         display: none;
     }
@@ -111,6 +118,7 @@ a:hover {
 
 .main__img-adaptive {
     display: none;
+    flex: 0 1 35%;
 }
 
 @media (max-width:320px) {
@@ -124,7 +132,7 @@ a:hover {
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .main__img-adaptive {
         display: block;
         margin-left: 5rem;
@@ -150,7 +158,7 @@ a:hover {
     border-bottom: 2px solid #333;
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .header-main__tel {
         display: none;
     }
@@ -172,13 +180,13 @@ a:hover {
 
 .menu__button:hover {}
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .menu__button {
         padding-left: 3rem;
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .header-main__burger {
         display: block;
     }
@@ -239,9 +247,10 @@ a:hover {
 .content-main__page {
     display: flex;
     align-items: baseline;
+    flex: 0 1 50%;
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .content-main__page {
         justify-content: center;
     }
@@ -257,7 +266,7 @@ a:hover {
     padding-top: 0;
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .main__sense dl {
         display: flex;
         flex-direction: column;
@@ -276,7 +285,7 @@ a:hover {
     margin-top: -0.45rem;
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .main__sense h1 {
         font-size: 3.5rem;
         line-height: 120%;
@@ -310,7 +319,7 @@ a:hover {
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .main__sense dd {
         font-size: 2.25rem;
         line-height: 2.3rem;
@@ -357,10 +366,11 @@ a:hover {
 .main__text {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
+    /* max-width: 50%; */
+    flex: 0 1
 }
 
-@media(max-width:1024px) {
+@media(max-width:768px) {
     .main__text {
         display: flex;
         flex-direction: column;
@@ -401,7 +411,7 @@ a:hover {
     display: flex;
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .main__promo {
         max-width: 100%;
         flex: 0 0 15%;
@@ -441,7 +451,7 @@ a:hover {
 
 .main__img img {
     width: 100%;
-    margin-top: -100px;
+    padding-top: -100px;
 }
 
 @media (max-width:320px) {
@@ -450,7 +460,7 @@ a:hover {
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
     .main__img {
         display: none;
     }
@@ -568,18 +578,296 @@ a:hover {
 .prices__title {
     padding-top: 6.3rem;
     text-align: center;
+    font-weight: 600;
+    font-size: 1.9rem;
 }
 
-.prices__subtitle {}
+.prices__subtitle {
+    padding-top: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
 
-.prices__items {}
+.prices__items {
+    padding-top: 3.8rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
 
-.prices__item {}
+.prices__item {
+    border: 1px solid #EBEBEB;
+    padding: 5.2rem 5.8rem 4.9rem;
+    text-align: center;
+}
 
-.prices__item-header {}
+.prices__item:nth-child(2) {
+    border: 1px solid #FED100;
+}
 
-.prices__item-content {}
+.prices__item-header {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
 
-.prices__item-price {}
+.prices__item-content li {
+    list-style-type: none;
+}
+
+.prices__item-content {
+    padding-top: 3.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.prices__item-price {
+    padding-top: 3.75rem;
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+.prices__item-button {
+    margin-top: 3.2rem;
+    max-width: 15.6rem;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.9rem 0;
+    background-color: var(--yellow);
+}
+
+@media (max-width:768px) {}
+
+.prices__item-all {
+    display: none;
+}
+
+.prices__item-button:hover {
+    box-shadow: 0 4px 4px 6px rgb(100%, 91%, 53%, 0.6);
+}
+
+.prices__item-button a:hover {
+    color: var(--white);
+}
+
+
+/*===================================================================fleet=============================*/
+
+.fleet {}
+
+.container__fleet {
+    max-width: 79rem;
+    margin: 0 auto;
+}
+
+.fleet__header {
+    text-align: center;
+}
+
+.fleet__title {
+    padding-top: 6.3rem;
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+.fleet__subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 1rem;
+}
+
+.fleet__cars {
+    display: flex;
+    text-decoration: none;
+    margin-top: 3.8rem;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.fleet__cars li {
+    list-style-type: none;
+    font-size: 1.25rem;
+    padding: 0.9rem 0;
+    border: 1px solid #EBEBEB;
+    width: 12.5rem;
+}
+
+.fleet__cars li:first-child {
+    border: 1px solid #FED100;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.fleet__content {
+    display: flex;
+    padding-top: 3.75rem;
+    justify-content: space-around;
+    align-items: center;
+    gap: 6.5rem;
+}
+
+.fleet__arrow-left,
+.fleet__arrow-right {
+    display: flex;
+}
+
+.fleet__arrow-left {
+    transform: rotate(45deg);
+    padding-left: 2.75rem;
+}
+
+.fleet__content-header {
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 2.4rem;
+}
+
+.fleet__content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem
+}
+
+.fleet__content-advantage {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem
+}
+
+.fleet__content-advantage li {
+    display: flex;
+    gap: 1rem;
+}
+
+.fleet__content-header {}
+
+.fleet__content-pluses {}
+
+.fleet__content-pluses li {
+    display: flex;
+}
+
+.fleet__content-button {
+    width: 15.6rem;
+    text-align: center;
+    margin-bottom: 8rem;
+}
 
 .prices__item-button {}
+
+.fleet__content-img {
+    max-width: 40rem;
+}
+
+.fleet__content-img img {
+    width: 100%;
+    padding-top: 4rem;
+}
+
+.fleet__arrow-right {
+    transform: rotate(225deg);
+    padding-right: 2.75rem;
+}
+
+.fleet__arrow {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-bottom: 3px solid #333;
+    border-left: 3px solid #333;
+    padding: 10px;
+}
+
+
+/*=============================== reviews ==================================*/
+
+.reviews {
+    background-color: var(--yellow);
+}
+
+.container__reviews {
+    max-width: 83rem;
+    margin: 0 auto;
+}
+
+.reviews__header {
+    text-align: center;
+    font-weight: 600;
+    padding-top: 6.2rem;
+    font-size: 1.9rem;
+}
+
+.reviews__contents {
+    display: flex;
+    gap: 2rem;
+}
+
+.reviews__content {
+    padding-top: 3.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reviews__content-name {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.reviews__content-date {
+    display: flex;
+    padding-top: 0.6rem;
+}
+
+.reviews__content-date li {
+    list-style-type: none;
+}
+
+.reviews__content-date li:last-child {
+    list-style-type: none;
+    color: var(--red);
+}
+
+.reviews__content-text {
+    padding-top: 1.4rem;
+}
+
+.reviews__content-all {
+    padding-top: 1rem;
+    text-decoration: underline;
+}
+
+.reviews__content-all a {
+    color: var(--main);
+}
+
+.reviews__footer {}
+
+.reviews__button {
+    margin: 0 auto;
+    margin-top: 3.7rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+    padding: 0.9rem 0;
+    border: 1px solid var(--main);
+    max-width: 15.6rem;
+    text-align: center;
+}
+
+.reviews__button a {
+    color: var(--main);
+}
+
+.reviews__button a:hover {
+    color: var(--main);
+}
+
+.reviews__button:hover {
+    background-color: var(--white);
+    font-weight: 700;
+    border: 0;
+}
+
+.reviews__button-padding {
+    padding-bottom: 5.9rem;
+}
