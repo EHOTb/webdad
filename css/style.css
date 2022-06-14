@@ -11,15 +11,11 @@ body {
     --red: #FF352B;
     --white: #fff;
     --gray: #F8FBFF;
+    --orange: #FF772B;
 }
 
 a:hover {
     color: var(--red);
-}
-
-;
-.container {
-    padding: 0 2rem;
 }
 
 .wrapper__global {
@@ -28,7 +24,7 @@ a:hover {
 }
 
 .main__container {
-    padding: 0 2rem;
+    padding: 0 15%;
 }
 
 @media(max-width:768px) {
@@ -45,6 +41,7 @@ a:hover {
 
 .main__container {
     margin: 0 auto;
+    width: 100%;
 }
 
 @media (max-width:768px) {
@@ -62,9 +59,10 @@ a:hover {
 }
 
 .main__header {
+    margin: 0 auto;
     height: 6.7rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -163,6 +161,10 @@ a:hover {
     border-bottom: 0.12rem solid var(--main);
 }
 
+.main__tel a:hover {
+    color: var(--red);
+}
+
 @media (max-width:768px) {
     .main__tel {
         display: none;
@@ -218,7 +220,7 @@ a:hover {
 
 .main__content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex: 0 1 50%;
 }
 
@@ -257,6 +259,7 @@ a:hover {
     line-height: 5.56rem;
     margin: 0;
     margin-top: -0.45rem;
+    max-width: 30rem;
 }
 
 @media (max-width:768px) {
@@ -358,7 +361,7 @@ align-items: center;
 }
 
 .button:hover {
-    background-color: #FF352B;
+    background-color: var(--orange);
 }
 
 .main__button::after {
@@ -377,6 +380,10 @@ align-items: center;
 
 .main__button:hover::after {
     background-color: #F2F2F2;
+}
+
+.main__promo {
+    padding-bottom: 5rem;
 }
 
 @media (max-width:768px) {
@@ -429,7 +436,7 @@ align-items: center;
 }
 
 .main__img {
-    margin-top: -5rem;
+    margin-top: -2rem;
     position: relative;
     display: flex;
     align-items: flex-end;
