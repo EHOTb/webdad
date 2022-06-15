@@ -495,11 +495,7 @@ align-items: center;
 }
 
 .howItsWork__items {
-    /* display: flex;
-    justify-content: space-around;===========================================================!
-    gap: 4rem;
-    flex: 0 1 50%;
-    flex-wrap: wrap; */
+    padding-bottom: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -561,10 +557,13 @@ align-items: center;
 
 @media(max-width:320px) {
     .howItsWork__item {
-        padding: 0;
+        /* display: flex; */
+        /* padding: 0; */
         width: 19rem;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         padding: 0 1.5rem 0 1rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr 0fr;
     }
 }
 
@@ -576,51 +575,22 @@ align-items: center;
     position: relative;
     justify-content: center;
     width: 2rem;
+    text-shadow: var(--yellow) 0.2rem 0;
 }
 
 @media(max-width:768px) {
     .howItsWork__item-number {
         font-size: 5.6rem;
+        padding-right: 7rem;
     }
 }
 
 @media(max-width:320px) {
     .howItsWork__item-number {
-        padding-right: 5.5rem;
-        padding-left: 1vw;
+        font-size: 2.7rem;
+        padding: 0 2rem 0 1vw;
+        text-shadow: 0;
     }
-}
-
-.howItsWork__item-number:first-child:before {
-    position: absolute;
-    left: 3px;
-    content: "01";
-    color: var(--yellow);
-    z-index: -1;
-}
-
-.howItsWork__item-number:nth-child(2):before {
-    position: absolute;
-    left: 0.19rem;
-    content: "02";
-    color: var(--yellow);
-    z-index: -1;
-}
-
-.howItsWork__item-number:nth-child(3)::before {
-    position: absolute;
-    left: 0.19rem;
-    content: "03";
-    color: var(--yellow);
-    z-index: -1;
-}
-
-.howItsWork__item-number:last-child:before {
-    position: absolute;
-    left: 0.19rem;
-    content: "04";
-    color: var(--yellow);
-    z-index: -1;
 }
 
 .howItsWork__item-title {
@@ -647,7 +617,7 @@ align-items: center;
     }
 }
 
-th .howItsWork__item-arrow {
+.howItsWork__item-arrow {
     display: none;
 }
 
@@ -731,18 +701,10 @@ th .howItsWork__item-arrow {
 .prices__items {
     padding-top: 3.8rem;
     display: flex;
-    justify-content: space-between;
-    /* flex-wrap: wrap; */
-    gap: 1.5rem;
-    flex: 0 1 32%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(9rem, 26rem));
+    column-gap: 1.5rem;
 }
-
-@media (max-width:768px) {
-    .prices__items {}
-}
-
-
-/*============================== не смог выровнять по флекс врап(.prices__items ) в чем ошибка???? пришлось добавить 1070px ===========*/
 
 @media (max-width:1070px) {
     .prices__items {
@@ -750,11 +712,22 @@ th .howItsWork__item-arrow {
     }
 }
 
+@media (max-width:768px) {
+    .prices__items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+}
+
+
+/*============================== не смог выровнять по флекс врап(.prices__items ) в чем ошибка???? пришлось добавить 1070px ===========*/
+
 .prices__item {
     border: 0.06rem solid #EBEBEB;
-    padding: 5.2rem 5.8rem 4.9rem;
+    padding: 5.3rem 0 4.9rem 0;
     text-align: center;
-    flex: 1 2 30%;
 }
 
 @media(max-width:768px) {
@@ -808,7 +781,7 @@ th .howItsWork__item-arrow {
 }
 
 .prices__item-content {
-    padding-top: 3.8rem;
+    padding-top: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -821,7 +794,7 @@ th .howItsWork__item-arrow {
 }
 
 .prices__item-price {
-    padding-top: 3.75rem;
+    padding-top: 4rem;
     font-size: 1.9rem;
     font-weight: 600;
 }
@@ -871,6 +844,7 @@ th .howItsWork__item-arrow {
 
 @media (max-width:768px) {
     .prices__item-all {
+        font-size: 1rem;
         display: block;
     }
 }
