@@ -1271,6 +1271,13 @@ align-items: center;
         gap: 1rem;
         padding-bottom: 3.5rem;
     }
+    .reviews__content-slider li {
+        padding: 2px;
+    }
+    .reviews__content-slider li:first-child {
+        border: 1px solid var(--main);
+        border-radius: 50%;
+    }
 }
 
 @media(max-width:320px) {
