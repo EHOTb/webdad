@@ -21,7 +21,7 @@
             <div class="main__container">
                 <div class="main__header">
                     <div class="main__logo">Movee</div>
-                    <nav class="main__nav">
+                    <nav class="main__nav " id="main__nav">
                         <div>
                             <a href="#">Цены</a>
                         </div>
@@ -37,7 +37,7 @@
                     </nav>
 
                     <div class="main__burger">
-                        <div class="menu__button menu__button-active">
+                        <div class="menu__button menu__button-active button">
                             <span></span>
                         </div>
 
@@ -60,7 +60,7 @@
                                 <img src="./img/img/main-img-mobile.svg" alt="delivery boy">
                             </li>
 
-                            <li class="button main__button">Заказать</li>
+                            <li class="button main__button ">Заказать</li>
 
 
 
@@ -166,7 +166,7 @@
                 </section>
             </div>
         </section>
-        <section class="prices">
+        <section class="prices" id="prices">
             <div class="container__prices container">
                 <div class="prices__header">
                     <div class="prices__title">Цены</div>
@@ -185,7 +185,7 @@
                         <div class="prices__item-price">
                             70 руб.
                         </div>
-                        <div class="prices__item-button">
+                        <div class="prices__item-button button">
                             <a href="#">Заказать</a>
                         </div>
                         <div class="prices__item-all">
@@ -205,7 +205,7 @@
                         <div class="prices__item-price">
                             100 руб.
                         </div>
-                        <div class="prices__item-button">
+                        <div class="prices__item-button button">
                             <a href="#">Заказать</a>
                         </div>
                         <div class="prices__item-all">
@@ -225,7 +225,7 @@
                         <div class="prices__item-price">
                             150 руб.
                         </div>
-                        <div class="prices__item-button">
+                        <div class="prices__item-button button">
                             <a href="#">Заказать</a>
                         </div>
                         <div class="prices__item-all">Все цены</div>
@@ -237,7 +237,7 @@
                 </section>
             </div>
         </section>
-        <section class="fleet">
+        <section class="fleet" id="fleet">
             <div class="container__fleet container">
                 <div class="fleet__header">
                     <div class="fleet__title"> Автопарк</div>
@@ -289,7 +289,7 @@
 
 
                             </div>
-                            <div class="fleet__content-button prices__item-button"><a href="#">Заказать</a></div>
+                            <div class="fleet__content-button prices__item-button button"><a href="#">Заказать</a></div>
 
                         </div>
                         <div class="fleet__content-img"><img src="./img/img/fleet-truck.jpg" alt="truck"></div>
@@ -309,12 +309,12 @@
                             <li>⬤</li>
                             <li>⬤</li>
                         </ul>
-                        <div class="fleet__adaptive-button">Заказать</div>
+                        <div class="fleet__adaptive-button button">Заказать</div>
                     </div>
 
                 </div>
         </section>
-        <section class="reviews">
+        <section class="reviews" id="reviews">
             <div class="container__reviews container">
                 <div class="reviews__header">
                     <p>Отзывы</p>
@@ -363,12 +363,150 @@
                         <li>⬤</li>
                     </ul>
 
-                    <div class="reviews__button "><a href="#">Все отзывы</a></div>
+                    <div class="reviews__button  button"><a href="#">Все отзывы</a></div>
                     <div class="reviews__button-padding"></div>
                 </div>
             </div>
         </section>
+        <section class="order">
+            <div class="container__order">
+                <div class="order__header">
+                    <div class="order__title">Закажи переезд прямо сейчас со скидкой %</div>
+                    <div class="order__title-adaptive">Закажи переезд прямо сейчас</div>
+                    <div class="order__subtitle">Мы перезвоним в течении 10 секунд</div>
+                </div>
+                <div class="order__main">
+                    <div class="order__contacts">
+                        <input type="text" class="order__name" placeholder="Ваше имя">
+                        <input type="text" class="order__tel" placeholder="Телефон">
+                    </div>
+                    <div class="order__place">
+                        <div class="order__region">
+                            <div class="order__region-header">Укажите область</div>
+                            <select size="1" class="order__region-content">
+                                <option label="Например: Минская"> Например: Минская</option>
+                                <option label="Брестская">Брестская</option>
+                                <option label="Витебская">Витебская</option>
+                                <option label="Гродненская">Гродненская</option>
+                                <option label="Гомельская">Гомельская</option>
+                                <option label="Могилевская">Могилевская</option>
+                            </select>
+                        </div>
+                        <div class="order__city">
+                            <div class="order__city-header">Укажите город</div>
+                            <select class="order__city-content">
+                                <option value="Мозырь">Мозырь</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="order__payMethod">
+                        <div class="order__payMethod-header">Способ оплаты</div>
+                        <div class="order__payMethod-contents">
+                            <div>
+                                <input type="radio" id="cash" name="payMethod" class="payMethod__radio" value="Наличными курьеру">
+                                <label for="cash" class="payMethod__label">Наличными курьеру</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="card" name="payMethod" class="payMethod__radio" value="Картой курьеру" checked>
+                                <label for="card" class="payMethod__label">Картой курьеру    </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="bank" name="payMethod" class="payMethod__radio" value="Банковский перевод">
+                                <label for="bank" class="payMethod__label">Банковский перевод</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order__options">
+                        <ul class="order__options-header">
+                            <li>Дополнительные услуги</li>
+                            <li class="order__options-arrow"><img src="./img/icon/arrowL.svg" alt="arrow"></li>
+                        </ul>
+                        <div class="order__options-contents">
+                            <div class="order__options-content">
+                                <input type="checkbox" class="options-content" id="checkbox1" name="name1">
+                                <label for="checkbox1" class="checkbox__label">Вызов замерщика</label>
+                            </div>
+                            <div class="order__options-content">
+                                <input type="checkbox" class="options-content" id="checkbox2" name="name2">
+                                <label for="checkbox2" class="checkbox__label">Упаковка для хрупких предметов</label>
+                            </div>
+                            <div class="order__options-content">
+                                <input type="checkbox" class="options-content" id="checkbox3" name="name3">
+                                <label for="checkbox3" class="checkbox__label">Кран</label>
+                            </div>
+                            <div class="order__options-content">
+                                <input type="checkbox" class="options-content" id="checkbox4" name="name4">
+                                <label for="checkbox4" class="checkbox__label">Сборка мебели</label>
+                            </div>
+                            <div class="order__options-content">
+                                <input type="checkbox" class="options-content" id="checkbox5" name="name5">
+                                <label for="checkbox5" class="checkbox__label">Крупногабаритные предметы</label>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+                <div class="order__footer">
+                    <div class="order__timer">05:37:25</div>
+                    <div class="order__aside">
+                        <div class="order__button button">Заказать со скидой</div>
+                        <div class="order__guess-content">
+                            <input type="checkbox" class="order-guess" id="guess" name="iRead">
+                            <label for="guess" class="order__label">Даю согласие на обработку данных</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.588743406785!2d30.3399182307663!3d53.89985868839005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d051e467ce0b8f%3A0x7d15e999ca55cc05!2z0JDRgdGC0YDQvtC90L7QvA!5e0!3m2!1sru!2sby!4v1655379522683!5m2!1sru!2sby"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section class="adress" id="adress">
+            <div class="container__adress">
+                <div class="adress__header">Брест</div>
+                <div class="adress__tel">8 (029)-999-12-13</div>
+                <div class="adress__mail">hello@movee.ru</div>
+            </div>
+        </section>
+        <section class="footer">
+            <div class="container__footer">
+                <div class="footer__info">
+                    <div class="footer__logo">movee</div>
+                    <div class="footer__privacy">
+                        <div>Политика конфиденциальнности
+                        </div>
+                        <div>Соглашение на обработку персональных данных</div>
+                    </div>
+                </div>
+                <ul class="footer__nav">
+                    <li><a href="#main__nav">Главная</a></li>
+                    <li><a href="#prices">Цена</a></li>
+                    <li><a href="#fleet">Автопарк</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#adress">Контакты</a></li>
+                </ul>
+                <div class="footer__contacts">
+                    <div class="footer__contacts-button button">Обратный звонок</div>
+                    <div class="footer__contacts-tel">8 (029)-999-12-13</div>
+                    <ul class="footer__contacts-social">
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=RZ8SbN2plwg"><img src="./img/icon/yt.svg" alt="youtube"></a>
+                        </li>
+                        <li>
+                            <a href="vk.com"><img src="./img/icon/Vk.svg" alt="vk"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/"><img src="./img/icon/fb.svg" alt="fb"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/?hl=en"><img src="./img/icon/inst.svg" alt="inst"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
 
         </div>
