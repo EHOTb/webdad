@@ -42,6 +42,9 @@
     .reviews__contents {
         overflow-x: auto;
         flex-wrap: nowrap;
+        padding-left: 43rem;
+        padding-right: 50rem;
+        margin-right: 50rem;
     }
 }
 
@@ -64,6 +67,10 @@
         max-height: 16.6rem;
         flex: 0 0 auto;
     }
+}
+
+@media(max-width:650px) {
+    .reviews__content {}
 }
 
 @media(max-width:320px) {

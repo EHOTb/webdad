@@ -8,6 +8,15 @@
 @import "map.css";
 @import "footer.css";
 @import "adress.css";
+@-moz-document url-prefix() {
+    .remove-me {
+        border: 1px solid red;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
 .button {
     cursor: pointer;
 }

@@ -325,8 +325,13 @@
     padding-left: 1rem;
 }
 
-.order__options-arrow img {
-    transform: rotate(268deg);
+.order__options-arrow {
+    margin: -0.3rem 0 0 2rem;
+    width: 0rem;
+    height: 1rem;
+    border-top: 0.12rem solid var(--main);
+    border-left: 0.12rem solid var(--main);
+    transform: rotate(225deg);
 }
 
 .order__options-contents {
@@ -359,7 +364,7 @@
 }
 
 .checkbox__label {
-    padding-left: 1.5rem;
+    padding-left: 2.5rem;
     position: relative;
 }
 
@@ -368,6 +373,7 @@
     display: block;
     width: 1rem;
     height: 1rem;
+    bottom: 0.06rem;
     border: 0.125rem solid rgba(51, 51, 51, 0.4);
     position: absolute;
     z-index: 1;
@@ -496,6 +502,8 @@
     height: 1rem;
     border: 0.125rem solid rgba(51, 51, 51, 0.4);
     position: absolute;
+    display: inline-block;
+    left: 0;
     z-index: 1;
     transition: opacity .2s linear;
 }
@@ -509,7 +517,7 @@
     background: url(/img/icon/checkmark.svg) no-repeat;
     border: 0.125rem solid var(--main);
     background-size: 0.75rem 0.65rem;
-    top: 0.12rem;
+    top: 0.08rem;
     z-index: 2;
     opacity: 0;
     transition: opacity .2s linear, border .2s linear;
