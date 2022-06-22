@@ -25,6 +25,7 @@ a:hover {
 
 .main__container {
     padding: 0 15%;
+    width: 80%;
 }
 
 @media(max-width:768px) {
@@ -495,16 +496,15 @@ align-items: center;
 }
 
 .howItsWork__items {
-    display: flex;
-    justify-content: space-around;
-    gap: 4rem;
-    flex: 0 1 50%;
-    flex-wrap: wrap;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 @media(max-width:768px) {
     .howItsWork__items {
         gap: 2.5rem;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -529,80 +529,75 @@ align-items: center;
 
 .howItsWork__item {
     display: flex;
-    max-width: 31rem;
+    padding: 0 1.5vw 0 5vw;
+}
+
+.howItsWork__item:nth-child(1),
+.howItsWork__item:nth-child(2) {
+    padding-bottom: 3.5rem;
+}
+
+.howItsWork__item:nth-child(1),
+.howItsWork__item:nth-child(3) {
+    padding-right: 5rem;
 }
 
 @media(max-width:768px) {
-    .howItsWork__item:nth-child(4) {
-        padding-bottom: 13rem;
+    .howItsWork__item:nth-child(1),
+    .howItsWork__item:nth-child(2) {
+        padding-bottom: 0;
+    }
+    .howItsWork__item:nth-child(1),
+    .howItsWork__item:nth-child(3) {
+        padding-right: 0;
+    }
+    .howItsWork__item {
+        padding: 0 1.5vw 0 5vw;
     }
 }
 
 @media(max-width:320px) {
     .howItsWork__item {
+        /* display: flex; */
+        /* padding: 0; */
         width: 19rem;
-        justify-content: space-between;
-    }
-    .howItsWork__item:nth-child(2) {
-        justify-content: flex-start;
+        /* justify-content: space-between; */
+        padding: 0 1.5rem 0 1rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr 0fr;
     }
 }
 
 .howItsWork__item-number {
     font-size: 3.1rem;
-    font-weight: 500;
-    padding-right: 2rem;
+    font-weight: 300;
+    padding-right: 5rem;
     padding-top: 0.1rem;
     position: relative;
+    justify-content: center;
+    width: 2rem;
+    text-shadow: var(--yellow) 0.2rem 0;
 }
 
 @media(max-width:768px) {
     .howItsWork__item-number {
         font-size: 5.6rem;
+        padding-right: 7rem;
     }
 }
 
 @media(max-width:320px) {
     .howItsWork__item-number {
-        padding-right: 0.5rem;
+        font-size: 2.7rem;
+        padding: 0 2rem 0 1vw;
+        text-shadow: 0;
     }
-}
-
-.howItsWork__item-number1::before {
-    position: absolute;
-    left: 3px;
-    content: "01";
-    color: var(--yellow);
-    z-index: -1;
-}
-
-.howItsWork__item-number2:before {
-    position: absolute;
-    left: 0.19rem;
-    content: "02";
-    color: var(--yellow);
-    z-index: -1;
-}
-
-.howItsWork__item-number3:before {
-    position: absolute;
-    left: 0.19rem;
-    content: "03";
-    color: var(--yellow);
-    z-index: -1;
-}
-
-.howItsWork__item-number4:before {
-    position: absolute;
-    left: 0.19rem;
-    content: "04";
-    color: var(--yellow);
-    z-index: -1;
 }
 
 .howItsWork__item-title {
     font-size: 1.25rem;
     padding-bottom: 1rem;
+    font-weight: 500;
 }
 
 @media(max-width:768px) {
@@ -707,18 +702,10 @@ align-items: center;
 .prices__items {
     padding-top: 3.8rem;
     display: flex;
-    justify-content: space-between;
-    /* flex-wrap: wrap; */
-    gap: 1.5rem;
-    flex: 0 1 32%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(9rem, 26rem));
+    column-gap: 1.5rem;
 }
-
-@media (max-width:768px) {
-    .prices__items {}
-}
-
-
-/*============================== не смог выровнять по флекс врап(.prices__items ) в чем ошибка???? пришлось добавить 1070px ===========*/
 
 @media (max-width:1070px) {
     .prices__items {
@@ -726,11 +713,22 @@ align-items: center;
     }
 }
 
+@media (max-width:768px) {
+    .prices__items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+}
+
+
+/*============================== не смог выровнять по флекс врап(.prices__items ) в чем ошибка???? пришлось добавить 1070px ===========*/
+
 .prices__item {
     border: 0.06rem solid #EBEBEB;
-    padding: 5.2rem 5.8rem 4.9rem;
+    padding: 5.3rem 0 4.9rem 0;
     text-align: center;
-    flex: 1 2 30%;
 }
 
 @media(max-width:768px) {
@@ -784,7 +782,7 @@ align-items: center;
 }
 
 .prices__item-content {
-    padding-top: 3.8rem;
+    padding-top: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -797,7 +795,7 @@ align-items: center;
 }
 
 .prices__item-price {
-    padding-top: 3.75rem;
+    padding-top: 4rem;
     font-size: 1.9rem;
     font-weight: 600;
 }
@@ -847,6 +845,7 @@ align-items: center;
 
 @media (max-width:768px) {
     .prices__item-all {
+        font-size: 1rem;
         display: block;
     }
 }
@@ -1156,13 +1155,15 @@ align-items: center;
 
 @media(max-width:768px) {
     .reviews {
-        overflow: hidden;
+        overflow: auto;
     }
 }
 
 .container__reviews {
     max-width: 83rem;
     margin: 0 auto;
+    display: inline;
+    overflow: scroll;
 }
 
 @media(max-width:768px) {
@@ -1179,28 +1180,48 @@ align-items: center;
     font-size: 1.9rem;
 }
 
+@media(max-width:320px) {
+    .reviews__header {
+        font-size: 1.25rem;
+    }
+}
+
 .reviews__contents {
     display: flex;
     gap: 2rem;
+    justify-content: center;
 }
 
 @media(max-width:768px) {
     .reviews__contents {
-        display: inline;
-        width: 82rem;
+        width: 81.5rem;
+    }
+}
+
+@media(max-width:320px) {
+    .reviews__contents {
+        width: 68rem;
     }
 }
 
 .reviews__content {
-    padding-top: 3.8rem;
+    padding: 3.8rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 25.5rem;
 }
 
 @media(max-width:768px) {
     .reviews__content {
-        min-width: 26rem;
+        max-height: 16.6rem;
+    }
+}
+
+@media(max-width:320px) {
+    .reviews__content {
+        width: 60rem;
+        overflow-x: scroll;
     }
 }
 
@@ -1238,6 +1259,33 @@ align-items: center;
 
 .reviews__footer {}
 
+.reviews__content-slider {
+    display: none;
+}
+
+@media(max-width:768px) {
+    .reviews__content-slider {
+        display: block;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding-bottom: 3.5rem;
+    }
+    .reviews__content-slider li {
+        padding: 2px;
+    }
+    .reviews__content-slider li:first-child {
+        border: 1px solid var(--main);
+        border-radius: 50%;
+    }
+}
+
+@media(max-width:320px) {
+    .reviews__content-slider {
+        display: none;
+    }
+}
+
 .reviews__button {
     margin: 0 auto;
     margin-top: 3.7rem;
@@ -1248,6 +1296,25 @@ align-items: center;
     max-width: 15.6rem;
     text-align: center;
 }
+
+
+/* @media(max-width:768px) {
+    .reviews__button {
+        position: fixed;
+        left: 34vw;
+        top: 45rem;
+        width: 15rem;
+    }
+}
+
+@media(max-width:320px) {
+    .reviews__button {
+        
+        left: 2.8rem;
+        top: 44rem;
+        width: 18rem;
+    }
+} */
 
 .reviews__button a {
     color: var(--main);
