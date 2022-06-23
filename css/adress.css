@@ -1,0 +1,77 @@
+.container__adress {
+    display: none;
+}
+
+@media(max-width:768px) {
+    .container__adress {
+        display: block;
+        padding: 3.9rem 0 9.2rem;
+        text-align: center;
+    }
+}
+
+@media(max-width:320px) {
+    .container__adress {
+        display: block;
+        padding: 1.2rem 0 1.8rem;
+        text-align: center;
+    }
+}
+
+.adress__header {
+    font-size: 2.5rem;
+}
+
+@media(max-width:320px) {
+    .adress__header {
+        font-size: 0.9rem;
+    }
+}
+
+.adress__tel {
+    font-size: 2rem;
+    padding-top: 0.8rem;
+}
+
+@media(max-width:320px) {
+    .adress__tel {
+        font-size: 0.9rem;
+        padding-top: 1.2rem;
+    }
+}
+
+.adress__mail {
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-top: 0.8rem;
+}
+
+@media(max-width:320px) {
+    .adress__mail {
+        font-size: 0.9rem;
+        padding-top: 1.2rem;
+    }
+}
+
+.adress__mail::after {
+    content: '';
+    position: absolute;
+    width: 12rem;
+    height: 0.06rem;
+    background: var(--main);
+    bottom: -0.5rem;
+    left: 2rem;
+}
+
+@media(max-width:320px) {
+    .adress__mail::after {
+        content: '';
+        position: absolute;
+        width: 6.6rem;
+        height: 0.06rem;
+        background: var(--main);
+        bottom: -0.5rem;
+        left: 0.5rem;
+    }
+}
