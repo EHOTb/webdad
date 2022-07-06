@@ -326,12 +326,12 @@
 }
 
 .order__options-arrow {
-    margin: -0.3rem 0 0 2rem;
+    margin: 0.3rem 0 0 2rem;
     width: 0rem;
     height: 1rem;
     border-top: 0.12rem solid var(--main);
     border-left: 0.12rem solid var(--main);
-    transform: rotate(225deg);
+    transform: rotate(45deg);
 }
 
 .order__options-contents {

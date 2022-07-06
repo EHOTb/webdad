@@ -1,0 +1,8 @@
+.hidden {
+    display: none;
+}
+
+.rotate {
+    transform: rotate(225deg);
+    margin-top: -0.3rem;
+}

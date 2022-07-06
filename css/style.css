@@ -8,6 +8,8 @@
 @import "map.css";
 @import "footer.css";
 @import "adress.css";
+@import "js.css";
+@import "burger.css";
 @-moz-document url-prefix() {
     .remove-me {
         border: 1px solid red;
@@ -34,6 +36,7 @@ body {
     --white: #fff;
     --gray: #F8FBFF;
     --orange: #FF772B;
+    --black: #000;
 }
 
 a:hover {

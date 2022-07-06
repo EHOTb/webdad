@@ -50,7 +50,9 @@
 
 @media(max-width:320px) {
     .reviews__contents {
-        width: 68rem;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
     }
 }
 
@@ -77,6 +79,11 @@
     .reviews__content {
         width: 60rem;
         flex: 1 1 auto;
+        max-height: 100rem;
+    }
+    .reviews__content:first-child,
+    .reviews__content:last-child {
+        display: none;
     }
 }
 
