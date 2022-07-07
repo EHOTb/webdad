@@ -133,3 +133,118 @@ function hamburger() {
 }
 
 hamburger();
+
+//==========================================timer===================================================//
+
+function timer() {
+    let displayHours = document.querySelector(".timer__hours");
+    let displayMinutes = document.querySelector(".timer__minutes");
+    let displaySeconds = document.querySelector(".timer__seconds");
+    // let countDownDate = new Date(
+    //     Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000
+    // );
+
+    let countDownDate = new Date(Date.parse(new Date()) + 5 * 60 * 60 * 1000);
+
+    let x = setInterval(function() {
+        let now = new Date().getTime();
+
+        let distance = countDownDate - now;
+
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (seconds <= 9) {
+            seconds = "0" + seconds;
+        }
+
+        if (minutes <= 9) {
+            minutes = "0" + minutes;
+        }
+
+        if (hours <= 9) {
+            hours = "0" + hours;
+        }
+
+        displayHours.innerHTML = hours;
+        displayMinutes.innerHTML = minutes;
+        displaySeconds.innerHTML = seconds;
+
+        if (distance < 0) {
+            alert("Your soul is mine!");
+        }
+    }, 1000);
+}
+timer();
+
+//======================================Validate form=====================================//
+
+function validateForm() {
+    let form = document.querySelector(".order");
+    let button = form.querySelector(".order__button");
+    let name = form.querySelector(".order__name");
+    let tel = form.querySelector(".order__tel");
+    let region = form.querySelector(".order__region-content");
+    let city = form.querySelector(".order__city-content");
+    let fields = form.querySelectorAll(".field");
+    let confirm = form.querySelector(".confirm");
+
+    button.classList.add("button__gray");
+
+    button.addEventListener("click", function() {
+        let errors = form.querySelectorAll(".error");
+        for (let elem of errors) {
+            elem.classList.remove("order__red");
+        }
+        for (let el of fields) {
+            if (!el.value) {
+                let div = document.createElement("div");
+                div.className = "error";
+                div.classList.add("order__red");
+                el.parentNode.insertBefore(div, el);
+                div.appendChild(el);
+            } else {
+                if (confirm.checked) {
+                    button.classList.remove("button__gray");
+                }
+            }
+        }
+        // let red = form.getElementsByClassName("order__red");
+        // if (red.length <= 0)
+    });
+}
+validateForm();
+
+//=======================================================city add================================//
+
+function cityAdd() {
+    let city = document.querySelector("#order__city");
+    let inp = document.createElement("input");
+    let orderOption = document.querySelector("#order__city-content");
+
+    inp.className = "newCity";
+    inp.type = "text";
+    inp.style.padding = "2.2rem 0 1rem 0.3rem";
+
+    inp.style.borderBottom = "0.06rem solid var(--main)";
+    inp.style.width = "18.8rem";
+    inp.placeholder = "Добавить город";
+    city.addEventListener("click", function func() {
+        city.appendChild(inp);
+
+        city.removeEventListener("click", func);
+    });
+    inp.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            let newOption = new Option(inp.value, inp.value);
+            orderOption.append(newOption);
+            inp.blur();
+            orderOption.focus();
+        }
+    });
+}
+cityAdd();

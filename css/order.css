@@ -526,3 +526,17 @@
 .order-guess:checked+.order__label:after {
     opacity: 1;
 }
+
+.order__red {
+    border: 0.06rem solid var(--red);
+}
+
+.button__gray {
+    background-color: gray;
+    color: var(--black);
+}
+
+.button__gray:hover {
+    background-color: gray;
+    color: var(--black);
+}

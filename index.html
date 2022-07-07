@@ -393,14 +393,15 @@
                 </div>
                 <div class="order__main">
                     <div class="order__contacts">
-                        <input type="text" class="order__name" placeholder="Ваше имя">
-                        <input type="text" class="order__tel" placeholder="Телефон">
+                        <input type="text" class="order__name field" placeholder="Ваше имя">
+                        <input type="text" class="order__tel field" placeholder="Телефон">
                     </div>
                     <div class="order__place">
                         <div class="order__region">
                             <div class="order__region-header">Укажите область</div>
-                            <select size="1" class="order__region-content">
-                                <option label="Например: Минская"> Например: Минская</option>
+                            <select size="1" class="order__region-content field">
+                                <option value="" disabled selected>Например: Минская</option>
+                                <option label="Минская"> Минская</option>
                                 <option label="Брестская">Брестская</option>
                                 <option label="Витебская">Витебская</option>
                                 <option label="Гродненская">Гродненская</option>
@@ -408,10 +409,11 @@
                                 <option label="Могилевская">Могилевская</option>
                             </select>
                         </div>
-                        <div class="order__city">
+                        <div class="order__city" id="order__city">
                             <div class="order__city-header">Укажите город</div>
-                            <select class="order__city-content">
-                                <option value="Мозырь">Мозырь</option>
+                            <select class="order__city-content field" id="order__city-content">
+                                <option value="" disabled selected>Мозырь</option>
+                                
                             </select>
                         </div>
                     </div>
@@ -465,12 +467,18 @@
 
                 </div>
                 <div class="order__footer">
-                    <div class="order__timer">05:37:25</div>
+                    <div class="order__timer">
+                        <div class="timer__items">
+                            <div class="timer__item timer__hours">05</div>
+                            <div class="timer__item timer__minutes">37</div>
+                            <div class="timer__item timer__seconds">25</div>
+                        </div>
+                    </div>
                     <div class="order__aside">
                         <div class="order__button button">Заказать со скидой</div>
                         <div class="order__guess-content">
                             <input type="checkbox" class="order-guess" id="guess" name="iRead">
-                            <label for="guess" class="order__label">Даю согласие на обработку данных</label>
+                            <label for="guess" class="order__label confirm">Даю согласие на обработку данных</label>
                         </div>
                     </div>
                 </div>

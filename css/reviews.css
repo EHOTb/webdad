@@ -79,7 +79,7 @@
     .reviews__content {
         width: 60rem;
         flex: 1 1 auto;
-        max-height: 100rem;
+        max-height: none;
     }
     .reviews__content:first-child,
     .reviews__content:last-child {

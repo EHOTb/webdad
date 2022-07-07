@@ -10,6 +10,7 @@
 @import "adress.css";
 @import "js.css";
 @import "burger.css";
+@import "timer.css";
 @-moz-document url-prefix() {
     .remove-me {
         border: 1px solid red;
