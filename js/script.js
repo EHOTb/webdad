@@ -12,35 +12,6 @@ function orderHidden() {
 }
 orderHidden();
 
-// ==================================fleet slider=======================/
-
-function fleetSlider() {
-    let fleet = document.querySelector(".fleet__cars li:first-child");
-
-    let fleet2 = document.querySelector(".fleet__cars li:nth-child(2)");
-
-    let fleet3 = document.querySelector(".fleet__cars li:nth-child(3)");
-
-    // let fleetContent =
-
-    let fleetImage = document.querySelector(".fleet__content-img img");
-
-    fleet.addEventListener("click", function func() {
-        console.log("hello");
-        fleetImage.src = "./img/img/fleet-truck.jpg";
-    });
-
-    fleet2.addEventListener("click", function func() {
-        console.log("hello");
-        fleetImage.src = "./img/img/fleet-truck2.jpg";
-    });
-
-    fleet3.addEventListener("click", function func() {
-        console.log("hello2");
-        fleetImage.src = "./img/img/fleet-truck3.jpg";
-    });
-}
-fleetSlider();
 //=======================================reviews hidden==================================//
 function reviewsHidden() {
     let reviewsContentText = document.querySelectorAll(".reviews__content-text");
@@ -186,14 +157,14 @@ timer();
 function validateForm() {
     let form = document.querySelector(".order");
     let button = form.querySelector(".order__button");
-    let name = form.querySelector(".order__name");
-    let tel = form.querySelector(".order__tel");
-    let region = form.querySelector(".order__region-content");
-    let city = form.querySelector(".order__city-content");
+    // let name = form.querySelector(".order__name");
+    // let tel = form.querySelector(".order__tel");
+    // let region = form.querySelector(".order__region-content");
+    // let city = form.querySelector(".order__city-content");
     let fields = form.querySelectorAll(".field");
     let confirm = form.querySelector(".confirm");
 
-    button.classList.add("button__gray");
+    let gray = button.classList.add("button__gray");
 
     button.addEventListener("click", function() {
         let errors = form.querySelectorAll(".error");
@@ -209,12 +180,10 @@ function validateForm() {
                 div.appendChild(el);
             } else {
                 if (confirm.checked) {
-                    button.classList.remove("button__gray");
+                    gray.classList.remove("button__gray");
                 }
             }
         }
-        // let red = form.getElementsByClassName("order__red");
-        // if (red.length <= 0)
     });
 }
 validateForm();
@@ -248,3 +217,91 @@ function cityAdd() {
     });
 }
 cityAdd();
+
+// ==================================fleet slider=======================/
+
+function fleetSlider() {
+    const nextBtn = document.querySelector(".fleet__arrow-right"),
+        prevBtn = document.querySelector(".fleet__arrow-left"),
+        img = document.querySelectorAll(".fleet__content-img"),
+        cars = document.querySelectorAll(".fleet__car"),
+        dots = document.querySelectorAll(".dot");
+    imgAdaptive = document.querySelectorAll(".fleet__adaptive-content");
+
+    let index = 0;
+
+    const activeSlide = (n) => {
+        for (image of img) {
+            image.classList.remove("img-active");
+        }
+        img[n].classList.add("img-active");
+    };
+
+    const activeCar = (n) => {
+        for (car of cars) {
+            car.classList.remove("active__cars");
+        }
+        cars[n].classList.add("active__cars");
+    };
+
+    const activeDot = (n) => {
+        for (dot of dots) {
+            dot.classList.remove("dot-active");
+        }
+        dots[n].classList.add("dot-active");
+    };
+
+    const activeSlideAdaptive = (n) => {
+        for (el of imgAdaptive) {
+            el.classList.remove("active__content");
+        }
+        imgAdaptive[n].classList.add("active__content");
+    };
+
+    const activeCarSlide = (ind) => {
+        activeSlide(ind);
+        activeCar(ind);
+    };
+
+    const activeCarDot = (i) => {
+        activeCarSlide(i);
+        activeDot(i);
+        activeSlideAdaptive(i);
+    };
+
+    const nextSlide = () => {
+        if (index == img.length - 1) {
+            index = 0;
+            activeCarSlide(index);
+        } else {
+            index++;
+            activeCarSlide(index);
+        }
+    };
+
+    const prevSlide = () => {
+        if (index == 0) {
+            index = img.length - 1;
+            activeCarSlide(index);
+        } else {
+            index--;
+            activeCarSlide(index);
+        }
+    };
+    cars.forEach((item, indexCar) => {
+        item.addEventListener("click", () => {
+            index = indexCar;
+            activeCarDot(index);
+        });
+    });
+    dots.forEach((item, indexDot) => {
+        item.addEventListener("click", () => {
+            index = indexDot;
+            activeCarDot(index);
+        });
+    });
+
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+}
+fleetSlider();
