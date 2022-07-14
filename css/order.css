@@ -535,12 +535,12 @@
     border: 0.06rem solid var(--red);
 }
 
-.button__gray {
-    background-color: gray;
+.gray {
+    background-color: var(--gray);
     color: var(--black);
 }
 
-.button__gray:hover {
-    background-color: gray;
+.gray:hover {
+    background-color: var(--gray);
     color: var(--black);
 }

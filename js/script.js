@@ -111,9 +111,6 @@ function timer() {
     let displayHours = document.querySelector(".timer__hours");
     let displayMinutes = document.querySelector(".timer__minutes");
     let displaySeconds = document.querySelector(".timer__seconds");
-    // let countDownDate = new Date(
-    //     Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000
-    // );
 
     let countDownDate = new Date(Date.parse(new Date()) + 5 * 60 * 60 * 1000);
 
@@ -161,7 +158,7 @@ function validateForm() {
     let fields = form.querySelectorAll(".field");
     let confirm = form.querySelector("#guess");
 
-    button.style.backgroundColor = "gray";
+    button.classList.add("gray");
 
     button.addEventListener("click", function() {
         confirmDiv.classList.remove("order__red");
@@ -180,7 +177,7 @@ function validateForm() {
         if (confirm.checked) {
             console.log(form.getElementsByClassName("order__red").length);
             if (form.getElementsByClassName("order__red").length == 0) {
-                button.style.backgroundColor.remove = "gray";
+                button.classList.remove("gray");
             }
         }
 
@@ -226,8 +223,9 @@ function fleetSlider() {
         prevBtn = document.querySelector(".fleet__arrow-left"),
         img = document.querySelectorAll(".fleet__content-img"),
         cars = document.querySelectorAll(".fleet__car"),
-        dots = document.querySelectorAll(".dot");
-    imgAdaptive = document.querySelectorAll(".fleet__adaptive-content");
+        dots = document.querySelectorAll(".dot"),
+        imgAdaptive = document.querySelectorAll(".fleet__adaptive-content"),
+        description = document.querySelectorAll(".fleet__descripion");
 
     let index = 0;
 
@@ -236,6 +234,13 @@ function fleetSlider() {
             image.classList.remove("img-active");
         }
         img[n].classList.add("img-active");
+    };
+
+    const activeDescripion = (n) => {
+        for (des of description) {
+            des.classList.remove("descripion-active");
+        }
+        description[n].classList.add("descripion-active");
     };
 
     const activeCar = (n) => {
@@ -260,6 +265,7 @@ function fleetSlider() {
     };
 
     const activeCarSlide = (ind) => {
+        activeDescripion(ind);
         activeSlide(ind);
         activeCar(ind);
     };

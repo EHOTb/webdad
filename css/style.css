@@ -38,6 +38,7 @@ body {
     --gray: #F8FBFF;
     --orange: #FF772B;
     --black: #000;
+    --gray: gray;
 }
 
 a:hover {
