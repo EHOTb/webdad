@@ -167,16 +167,18 @@ function validateForm() {
     button.style.backgroundColor = "gray";
 
     button.addEventListener("click", function() {
-        for (let elem of fields) {
+        for (elem of fields) {
             elem.classList.remove("order__red");
         }
 
-        for (let el of fields) {
+        for (el of fields) {
             if (!el.value) {
                 el.classList.add("order__red");
-            } else {
-                button.style.backgroundColor = "var(--red)";
-                // confirm(classList.remove("order__red"));
+            }
+        }
+        for (field of field) {
+            if (field.classList.contains("order__red")) {
+                button.style.backgroundColor = "red";
             }
         }
         console.log(confirm.checked);
