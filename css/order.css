@@ -109,7 +109,8 @@
     }
 }
 
-.order__contacts input {
+.order__name,
+.order__tel {
     padding-bottom: 1rem;
     border-bottom: 0.06rem solid var(--main);
 }
@@ -494,6 +495,7 @@
 .order__label {
     padding-left: 1.5rem;
     position: relative;
+    z-index: 30;
 }
 
 .order__label:before {
@@ -529,6 +531,7 @@
 }
 
 .order__red {
+    border: 0;
     border: 0.06rem solid var(--red);
 }
 

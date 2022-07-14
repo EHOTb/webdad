@@ -162,28 +162,24 @@ function validateForm() {
     // let region = form.querySelector(".order__region-content");
     // let city = form.querySelector(".order__city-content");
     let fields = form.querySelectorAll(".field");
-    let confirm = form.querySelector(".confirm");
+    let confirm = form.querySelector("#guess");
 
-    let gray = button.classList.add("button__gray");
+    button.style.backgroundColor = "gray";
 
     button.addEventListener("click", function() {
-        let errors = form.querySelectorAll(".error");
-        for (let elem of errors) {
+        for (let elem of fields) {
             elem.classList.remove("order__red");
         }
+
         for (let el of fields) {
             if (!el.value) {
-                let div = document.createElement("div");
-                div.className = "error";
-                div.classList.add("order__red");
-                el.parentNode.insertBefore(div, el);
-                div.appendChild(el);
+                el.classList.add("order__red");
             } else {
-                if (confirm.checked) {
-                    gray.classList.remove("button__gray");
-                }
+                button.style.backgroundColor = "var(--red)";
+                // confirm(classList.remove("order__red"));
             }
         }
+        console.log(confirm.checked);
     });
 }
 validateForm();
