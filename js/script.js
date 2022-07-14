@@ -157,19 +157,16 @@ timer();
 function validateForm() {
     let form = document.querySelector(".order");
     let button = form.querySelector(".order__button");
-    // let name = form.querySelector(".order__name");
-    // let tel = form.querySelector(".order__tel");
-    // let region = form.querySelector(".order__region-content");
-    // let city = form.querySelector(".order__city-content");
+    let confirmDiv = form.querySelector(".order__guess-content");
     let fields = form.querySelectorAll(".field");
-    let confirm = form.querySelector(".order__label ");
+    let confirm = form.querySelector("#guess");
 
     button.style.backgroundColor = "gray";
 
     button.addEventListener("click", function() {
+        confirmDiv.classList.remove("order__red");
         for (elem of fields) {
             elem.classList.remove("order__red");
-            console.log(fields);
         }
 
         for (el of fields) {
@@ -177,11 +174,16 @@ function validateForm() {
                 el.classList.add("order__red");
             }
         }
-        for (el1 of fields) {
-            if (!el1.classList.contains("order__red")) {
-                button.style.backgroundColor = "red";
+        if (!confirm.checked) {
+            confirmDiv.classList.add("order__red");
+        }
+        if (confirm.checked) {
+            console.log(form.getElementsByClassName("order__red").length);
+            if (form.getElementsByClassName("order__red").length == 0) {
+                button.style.backgroundColor.remove = "gray";
             }
         }
+
         console.log(confirm.checked);
     });
 }

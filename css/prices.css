@@ -178,6 +178,10 @@
     margin-right: auto;
 }
 
+.prices__item-button a {
+    color: var(--main);
+}
+
 @media(max-width:768px) {
     .prices__item-button {
         font-size: 1.8rem;
