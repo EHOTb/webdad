@@ -162,13 +162,14 @@ function validateForm() {
     // let region = form.querySelector(".order__region-content");
     // let city = form.querySelector(".order__city-content");
     let fields = form.querySelectorAll(".field");
-    let confirm = form.querySelector("#guess");
+    let confirm = form.querySelector(".order__label ");
 
     button.style.backgroundColor = "gray";
 
     button.addEventListener("click", function() {
         for (elem of fields) {
             elem.classList.remove("order__red");
+            console.log(fields);
         }
 
         for (el of fields) {
@@ -176,8 +177,8 @@ function validateForm() {
                 el.classList.add("order__red");
             }
         }
-        for (field of field) {
-            if (field.classList.contains("order__red")) {
+        for (el1 of fields) {
+            if (!el1.classList.contains("order__red")) {
                 button.style.backgroundColor = "red";
             }
         }
