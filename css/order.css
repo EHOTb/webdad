@@ -109,7 +109,8 @@
     }
 }
 
-.order__contacts input {
+.order__name,
+.order__tel {
     padding-bottom: 1rem;
     border-bottom: 0.06rem solid var(--main);
 }
@@ -326,12 +327,12 @@
 }
 
 .order__options-arrow {
-    margin: -0.3rem 0 0 2rem;
+    margin: 0.3rem 0 0 2rem;
     width: 0rem;
     height: 1rem;
     border-top: 0.12rem solid var(--main);
     border-left: 0.12rem solid var(--main);
-    transform: rotate(225deg);
+    transform: rotate(45deg);
 }
 
 .order__options-contents {
@@ -408,6 +409,7 @@
 
 .order__timer {
     font-size: 6rem;
+    width: 85%;
 }
 
 @media(max-width:768px) {
@@ -493,6 +495,7 @@
 .order__label {
     padding-left: 1.5rem;
     position: relative;
+    z-index: 30;
 }
 
 .order__label:before {
@@ -525,4 +528,19 @@
 
 .order-guess:checked+.order__label:after {
     opacity: 1;
+}
+
+.order__red {
+    border: 0;
+    border: 0.06rem solid var(--red);
+}
+
+.gray {
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+.gray:hover {
+    background-color: var(--gray);
+    color: var(--black);
 }

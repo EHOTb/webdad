@@ -1,0 +1,178 @@
+.main__burger {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .main__burger {}
+}
+
+@media (max-width:768px) {
+    .main__burger {
+        display: block;
+        cursor: pointer;
+        height: 2rem;
+        width: 7rem;
+        padding-top: 1rem;
+    }
+    .menu__button {
+        padding-left: 3rem;
+    }
+    .menu__button span,
+    span:after,
+    span::before {
+        display: block;
+        position: relative;
+        width: 2.75rem;
+        height: 0.1rem;
+        background-color: #616161;
+        margin-right: 1rem;
+        margin-top: 0.09rem;
+        transition: .3s;
+        z-index: 60;
+    }
+    .menu__button span:after {
+        content: '';
+        top: 0.62rem;
+        transition: .3s;
+        transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu__button span:before {
+        content: '';
+        top: -0.69rem;
+        transition: .3s;
+        transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu__button span:after,
+    span:before {
+        position: absolute;
+    }
+    .menu__button span.active:after {
+        content: '';
+        position: absolute;
+        bottom: 1rem;
+        width: 1.4rem;
+        transform: rotate(45deg);
+        top: -0.43rem;
+        transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    }
+    .menu__button span.active:before {
+        content: '';
+        position: absolute;
+        top: 0.5rem;
+        width: 1.4rem;
+        transform: rotate(-45deg);
+        transition: top 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .menu__button span.active {
+        background-color: inherit;
+    }
+    .menu__button {
+        position: relative;
+        z-index: 121;
+    }
+}
+
+@media(max-width:768px) {
+    .menu {
+        width: 19rem;
+        height: 97vh;
+        padding: 1rem 0;
+        background: var(--white);
+        transform: translateX(133%);
+        transition: transform 0.5s;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        margin-top: -3rem;
+    }
+    .menu.active {
+        position: relative;
+        transform: translateX(-61%);
+        transition: transform 0.5s;
+        z-index: 120;
+    }
+    .menu__full {
+        display: flex;
+        position: absolute;
+        /* transform: translateX(-100%); */
+    }
+    .b-active {
+        position: absolute;
+        width: 42rem;
+        height: 100vh;
+        top: -3.1rem;
+        left: -42rem;
+        z-index: 2;
+    }
+    body.overflow-hidden {
+        overflow: hidden;
+    }
+    .menu.active nav {
+        padding-top: 10.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu li {
+        list-style-type: none;
+        width: 100%;
+        height: 4.6rem;
+        display: flex;
+        align-items: center;
+        padding-left: 2rem;
+    }
+    .menu.active li:hover {
+        background-color: var(--black);
+    }
+    .menu li a {
+        color: var(--main);
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+    .menu.active a:hover {
+        color: var(--white);
+    }
+    .menu li:last-child {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        position: relative;
+        text-decoration: underline;
+        padding-bottom: 1rem;
+        font-weight: 600;
+    }
+    @media(max-width:320px) {
+        .b-active {
+            display: none;
+        }
+        .menu {
+            width: 100%;
+            height: 100%;
+        }
+        .menu.active {
+            transform: translateX(-65%);
+            transition: transform 1.5s;
+            z-index: 120;
+            margin-right: 0;
+            width: 320px;
+            height: 100%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .menu.active nav {
+            padding-top: 5.3rem;
+        }
+        .menu__button span.active:after {
+            right: -1.6rem;
+        }
+        .menu__button span.active:before {
+            right: -1.6rem;
+        }
+        .menu li a {
+            font-size: 1.1rem;
+        }
+        .menu nav li:last-child {
+            padding: 3rem 0 0 0;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

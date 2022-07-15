@@ -65,7 +65,7 @@
     }
 }
 
-.fleet__cars li {
+.fleet__car {
     list-style-type: none;
     font-size: 1.25rem;
     padding: 0.9rem 0;
@@ -74,35 +74,60 @@
 }
 
 @media(max-width:768px) {
-    .fleet__cars li {
+    .fleet__car {
         font-size: 1.25rem;
         border: 0;
     }
 }
 
 @media(max-width:320px) {
-    .fleet__cars li {
+    .fleet__car {
         border: 0;
         font-size: 0.9rem;
         padding-top: 0.9rem;
     }
 }
 
-.fleet__cars li:first-child {
+.active__cars {
     border: 1px solid var(--yellow);
     font-weight: 500;
     position: relative;
 }
 
-.fleet__cars li a {
+.fleet__car a {
     color: var(--main);
 }
 
 @media(max-width:768px) {
-    .fleet__cars li:first-child {
+    .fleet__car {
         border: 0;
     }
-    .fleet__cars li:first-child a {
+    .active__cars {
+        position: relative;
+    }
+    .active__cars:before {
+        position: absolute;
+        top: 2.6rem;
+        left: 25%;
+        width: 50%;
+        border-bottom: 1px solid var(--yellow);
+        content: "";
+    }
+}
+
+.fleet__car a {
+    color: var(--main);
+}
+
+.fleet__car {
+    cursor: pointer;
+}
+
+@media(max-width:768px) {
+    .fleet__cars-active {
+        border: 0;
+    }
+    .fleet__cars-active a {
         border: 0;
         border-bottom: 0.12rem solid var(--yellow);
     }
@@ -119,6 +144,7 @@
 .fleet__arrow-left,
 .fleet__arrow-right {
     display: flex;
+    cursor: pointer;
 }
 
 .fleet__arrow-left {
@@ -135,7 +161,7 @@
 .fleet__content-text {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem
+    gap: 1.75rem;
 }
 
 .fleet__content-advantage {
@@ -165,9 +191,7 @@
 
 .prices__item-button {}
 
-.fleet__content-img {
-    max-width: 40rem;
-}
+.fleet__content-img {}
 
 .fleet__content-img img {
     width: 100%;
@@ -189,8 +213,10 @@
 
 .fleet__1024 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
+    height: 45rem;
 }
 
 @media(max-width:768px) {
@@ -212,7 +238,9 @@
     }
 }
 
-.fleet__adaptive-img {}
+.fleet__adaptive-img {
+    height: 29%;
+}
 
 @media(max-width:768px) {
     .fleet__adaptive-img img {
@@ -232,6 +260,8 @@
 
 .fleet__adaptive-content {
     font-size: 1.25rem;
+    display: none;
+    max-height: 31rem;
 }
 
 @media(max-width:320px) {
@@ -249,14 +279,15 @@
         display: flex;
         gap: 1.1rem;
     }
-    .fleet__adaptive-slider li {
+    .dot {
         list-style-type: none;
         margin-bottom: 2rem;
         padding: 0.3rem;
     }
-    .fleet__adaptive-slider li:first-child {
-        border: 2px solid var(--yellow);
+    .dot-active {
+        border: 0.12rem solid var(--yellow);
         border-radius: 50%;
+        margin-top: -0.12rem;
     }
 }
 
@@ -269,10 +300,36 @@
     text-align: center;
 }
 
+.fleet__adaptive-name {
+    padding-top: 1rem;
+}
+
 @media(max-width:320px) {
     .fleet__adaptive-button {
         margin-top: 1.5rem;
         max-width: 18.3rem;
         font-size: 1.25rem;
     }
+}
+
+.fleet__descripion {
+    display: none;
+}
+
+.descripion-active {
+    display: block;
+}
+
+.fleet__content-img {
+    display: none;
+}
+
+.img-active {
+    display: block;
+}
+
+.active__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -190,6 +190,8 @@
 .footer__contacts-tel {
     padding-top: 0.5rem;
     text-decoration: underline;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 @media(max-width:768px) {

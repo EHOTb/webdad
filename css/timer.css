@@ -1,0 +1,17 @@
+.timer__items {
+    display: flex;
+    font-size: 96px;
+    gap: 1.5rem;
+}
+
+.timer__item {
+    position: relative;
+    text-align: center;
+}
+
+.timer__item:not(:last-child)::after {
+    content: ':';
+    position: absolute;
+    right: -1.3rem;
+    bottom: 0.4rem;
+}
